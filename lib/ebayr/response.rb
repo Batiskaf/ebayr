@@ -1,7 +1,7 @@
 # -*- encoding : utf-8 -*-
 module Ebayr #:nodoc:
   # A response to an Ebayr::Request.
-  class Response < Record
+  class Response # < Record
     def initialize(request, response)
       ActiveSupport::XmlMini.backend = 'Nokogiri'
 
