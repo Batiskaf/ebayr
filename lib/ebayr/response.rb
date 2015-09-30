@@ -2,6 +2,9 @@
 module Ebayr #:nodoc:
   # A response to an Ebayr::Request.
   class Response
+
+    attr_accessor :request, :response, :response_data
+
     def initialize(request, response)
       ActiveSupport::XmlMini.backend = 'Nokogiri'
 
@@ -13,8 +16,6 @@ module Ebayr #:nodoc:
         data = hash["#{@request.command}Response"]
         @response_data = Record.new(data)
       end
-
-      attr_accessor :request, :response, :response_data
     end
   end
 end
