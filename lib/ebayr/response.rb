@@ -13,6 +13,8 @@ module Ebayr #:nodoc:
         data = hash["#{@request.command}Response"]
         @response_data = Record.new(data)
       end
+
+      attr_accessor :request, :response, :response_data
     end
   end
 end
